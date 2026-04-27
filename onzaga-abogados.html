@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Onzaga Abogados y Asociados | Colombia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B3A5C;--navy-dark:#0D2236;--navy-light:#2E5F8A;
+  --gold:#C09A38;--gold-light:#D4B060;--gold-pale:#F9F4E8;
+  --white:#FFFFFF;--off-white:#F7F6F3;--gray-light:#EAEAE6;
+  --gray:#888;--text:#1A1A1A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+
+/* ═══════════════ NAV ═══════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:76px;
+  background:rgba(255,255,255,0.97);
+  border-bottom:1px solid var(--gray-light);
+  backdrop-filter:blur(10px);
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 2px 28px rgba(27,58,92,.09)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;cursor:pointer}
+.nav-logo svg{height:50px;width:auto}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1}
+.nav-logo-text .name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;letter-spacing:2px;color:var(--navy)}
+.nav-logo-text .sub{font-size:8px;letter-spacing:4px;color:var(--gold);margin-top:3px}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center}
+.nav-links li{position:relative}
+.nav-links a{
+  display:block;padding:0 18px;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--navy);text-decoration:none;font-weight:400;
+  line-height:76px;
+  transition:color .2s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:18px;right:18px;
+  height:2px;background:var(--gold);
+  transform:scaleX(0);transition:transform .3s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{
+  background:var(--navy)!important;color:var(--white)!important;
+  border-radius:2px;margin-left:12px;
+  line-height:1!important;padding:12px 22px!important;
+  font-size:10px!important;
+}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--gold)!important}
+
+/* ═══════════════ PAGES ═══════════════ */
+.page{display:none;min-height:100vh;padding-top:76px}
+.page.active{display:block}
+
+/* ═══════════════ HERO / INICIO ═══════════════ */
+.hero{
+  min-height:calc(100vh - 76px);
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.hero-main{
+  flex:1;display:flex;align-items:center;
+  padding:80px 5% 60px;
+  background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 55%,#1d4a73 100%);
+  position:relative;
+}
+.hero-main::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(255,255,255,.018) 80px,rgba(255,255,255,.018) 81px),
+    repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(255,255,255,.018) 80px,rgba(255,255,255,.018) 81px);
+}
+.hero-deco-cols{
+  position:absolute;right:4%;bottom:0;
+  display:flex;gap:10px;align-items:flex-end;
+  opacity:.07;
+}
+.hero-deco-col{width:32px;background:white;border-radius:2px 2px 0 0}
+.hero-content{position:relative;z-index:2;max-width:680px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:24px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,7vw,74px);font-weight:600;line-height:1.06;
+  color:var(--white);margin-bottom:12px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold-light)}
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,2.5vw,26px);font-weight:400;font-style:italic;
+  color:rgba(255,255,255,.65);margin-bottom:28px;
+}
+.hero-desc{
+  font-size:15px;line-height:1.85;color:rgba(255,255,255,.68);
+  max-width:500px;margin-bottom:44px;font-weight:300;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:var(--white);
+  padding:15px 30px;border-radius:2px;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;font-weight:500;border:none;cursor:pointer;
+  transition:background .2s,transform .2s;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid rgba(255,255,255,.3);color:var(--white);
+  padding:15px 30px;border-radius:2px;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;font-weight:300;cursor:pointer;background:none;
+  transition:border-color .2s,background .2s;
+}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(192,154,56,.12)}
+
+/* STATS BAR */
+.hero-stats{
+  background:var(--white);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:3px solid var(--gold);
+}
+.stat-item{
+  padding:28px 24px;border-right:1px solid var(--gray-light);
+  text-align:center;
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;font-weight:700;color:var(--navy);line-height:1;
+}
+.stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:6px}
+
+/* MISION */
+.mision-band{
+  background:var(--off-white);
+  padding:80px 5%;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.mision-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.mision-label::before{content:'';width:22px;height:1px;background:var(--gold)}
+.mision-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:600;color:var(--navy);margin-bottom:20px;line-height:1.15}
+.mision-title em{font-style:italic;color:var(--gold)}
+.mision-text{font-size:15px;line-height:1.9;color:#555;font-weight:300}
+.compromiso-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compromiso-card{
+  padding:22px;background:var(--white);border-left:2px solid var(--gold);border-radius:0 4px 4px 0;
+}
+.compromiso-card h4{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.compromiso-card p{font-size:12px;color:var(--gray);line-height:1.6}
+
+/* POR QUÉ ELEGIRNOS */
+.porque-band{background:var(--navy-dark);padding:80px 5%;color:white}
+.porque-band .section-label{color:var(--gold-light)}
+.porque-band .section-label::before{background:var(--gold-light)}
+.porque-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:600;color:white;margin-bottom:50px;text-align:center}
+.porque-title em{font-style:italic;color:var(--gold-light)}
+.porque-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06)}
+.porque-item{background:var(--navy-dark);padding:40px 32px;transition:background .3s}
+.porque-item:hover{background:rgba(192,154,56,.08)}
+.porque-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:rgba(192,154,56,.2);line-height:1;margin-bottom:16px}
+.porque-item h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:white;margin-bottom:10px}
+.porque-item p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300}
+
+/* ═══════════════ SERVICIOS ═══════════════ */
+.page-header{
+  background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 100%);
+  padding:60px 5%;color:white;
+}
+.page-header-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.page-header-label::before{content:'';width:22px;height:1px;background:var(--gold-light)}
+.page-header-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,56px);font-weight:600;color:white;line-height:1.1}
+.page-header-title em{font-style:italic;color:var(--gold-light)}
+.page-header-desc{font-size:15px;color:rgba(255,255,255,.6);margin-top:14px;max-width:560px;font-weight:300;line-height:1.8}
+
+/* SERVICIO ESTRELLA */
+.servicio-estrella{
+  background:var(--off-white);padding:80px 5%;
+  border-bottom:1px solid var(--gray-light);
+}
+.estrella-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold);color:white;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  padding:6px 14px;border-radius:2px;margin-bottom:24px;
+}
+.estrella-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
+.estrella-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:600;color:var(--navy);margin-bottom:16px;line-height:1.15}
+.estrella-title em{font-style:italic;color:var(--gold)}
+.estrella-desc{font-size:14px;line-height:1.85;color:#555;margin-bottom:28px;font-weight:300}
+.estrella-items{display:flex;flex-direction:column;gap:14px}
+.estrella-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px;background:white;border-radius:4px;
+  border-left:3px solid var(--gold);
+}
+.estrella-item-icon{
+  width:36px;height:36px;flex-shrink:0;
+  background:var(--gold-pale);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+}
+.estrella-item h4{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.estrella-item p{font-size:12px;color:var(--gray);line-height:1.6}
+
+/* COMPARENDOS */
+.comparendos-band{
+  background:white;padding:80px 5%;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  border-bottom:1px solid var(--gray-light);
+}
+.proceso-steps{display:flex;flex-direction:column;gap:0}
+.proceso-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--gray-light)}
+.proceso-step:last-child{border-bottom:none}
+.paso-num{
+  width:40px;height:40px;flex-shrink:0;
+  border:1px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--gold);
+}
+.proceso-step h4{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.proceso-step p{font-size:12px;color:var(--gray);line-height:1.6}
+
+/* PAQUETES */
+.paquetes-band{background:var(--off-white);padding:80px 5%}
+.section-centered{text-align:center;margin-bottom:56px}
+.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label.centered{justify-content:center}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:600;color:var(--navy);line-height:1.15}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-desc{font-size:14px;color:var(--gray);line-height:1.8;max-width:540px;font-weight:300;margin-top:12px}
+.paquetes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.paquete-card{
+  background:white;border-radius:4px;overflow:hidden;
+  border:1px solid var(--gray-light);
+  transition:transform .3s,box-shadow .3s;
+  position:relative;
+}
+.paquete-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(27,58,92,.1)}
+.paquete-card.featured{border-color:var(--gold);border-width:2px}
+.paquete-header{padding:28px 28px 20px;background:var(--navy)}
+.paquete-card.featured .paquete-header{background:var(--gold)}
+.paquete-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px}
+.paquete-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:white;margin-bottom:6px}
+.paquete-price{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.75);font-style:italic}
+.paquete-body{padding:28px}
+.paquete-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.paquete-features li{display:flex;gap:10px;font-size:13px;color:#555;line-height:1.5}
+.paquete-features li::before{content:'✓';color:var(--gold);font-weight:600;flex-shrink:0}
+.btn-paquete{
+  display:block;text-align:center;width:100%;
+  background:var(--navy);color:white;padding:13px;
+  border-radius:2px;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;border:none;font-family:'Jost',sans-serif;
+  transition:background .2s;
+}
+.btn-paquete:hover{background:var(--gold)}
+.paquete-card.featured .btn-paquete{background:var(--gold)}
+.paquete-card.featured .btn-paquete:hover{background:var(--navy)}
+.featured-badge{
+  position:absolute;top:16px;right:16px;
+  background:white;color:var(--gold);
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;font-weight:600;
+}
+
+/* ASESORIA & CONSULTORIA */
+.asesoria-band{background:white;padding:80px 5%;border-top:1px solid var(--gray-light)}
+.asesoria-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.asesoria-card{
+  border:1px solid var(--gray-light);border-radius:4px;overflow:hidden;
+}
+.asesoria-card-header{
+  background:var(--navy);padding:32px 32px 24px;
+}
+.asesoria-card.consultoria .asesoria-card-header{background:linear-gradient(135deg,var(--navy-dark),var(--navy-light))}
+.asesoria-icon{
+  width:48px;height:48px;background:rgba(255,255,255,.1);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--gold-light);
+  margin-bottom:16px;
+}
+.asesoria-card-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:white;margin-bottom:8px}
+.asesoria-card-sub{font-size:12px;color:rgba(255,255,255,.55);line-height:1.6;font-weight:300}
+.asesoria-card-body{padding:32px}
+.asesoria-desc{font-size:14px;color:#555;line-height:1.85;margin-bottom:24px;font-weight:300}
+.asesoria-dirigido{margin-bottom:20px}
+.asesoria-dirigido h4{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.asesoria-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.asesoria-list li{display:flex;gap:8px;font-size:12px;color:#666;line-height:1.5}
+.asesoria-list li::before{content:'→';color:var(--gold);flex-shrink:0}
+
+/* OTROS SERVICIOS */
+.otros-band{background:var(--off-white);padding:80px 5%}
+.otros-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:var(--gray-light);margin-top:48px}
+.otro-card{
+  background:white;padding:32px 28px;
+  transition:background .3s;cursor:default;position:relative;
+}
+.otro-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.otro-card:hover{background:var(--navy)}
+.otro-card:hover::before{transform:scaleX(1)}
+.otro-card:hover .otro-num,.otro-card:hover .otro-title,.otro-card:hover .otro-desc{color:white}
+.otro-card:hover .otro-desc{color:rgba(255,255,255,.6)}
+.otro-num{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;font-weight:600;transition:color .3s}
+.otro-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.2;transition:color .3s}
+.otro-desc{font-size:12px;color:var(--gray);line-height:1.65;transition:color .3s}
+
+/* ═══════════════ EQUIPO ═══════════════ */
+.equipo-section{padding:80px 5%}
+.equipo-fundador{
+  display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:center;
+  margin-bottom:80px;padding-bottom:80px;border-bottom:1px solid var(--gray-light);
+}
+.fundador-foto{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-light) 100%);
+  border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.foto-inicial{
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;font-weight:600;color:rgba(255,255,255,.18);line-height:1;
+}
+.foto-gold-line{width:40px;height:2px;background:var(--gold);margin:16px auto 12px}
+.foto-name-hint{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.3);text-transform:uppercase}
+.fundador-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold);color:white;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  padding:6px 14px;border-radius:2px;margin-bottom:20px;
+}
+.fundador-nombre{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.1}
+.fundador-cargo{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.fundador-bio{font-size:14px;line-height:1.9;color:#555;font-weight:300;margin-bottom:24px}
+.fundador-especialidades{display:flex;flex-wrap:wrap;gap:8px}
+.esp-tag{
+  font-size:10px;letter-spacing:1px;
+  border:1px solid var(--navy);color:var(--navy);
+  padding:5px 12px;border-radius:20px;
+}
+
+.abogados-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.abogado-card{display:grid;grid-template-columns:180px 1fr;gap:32px;align-items:center}
+.abogado-foto{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-light) 100%);
+  border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.abogado-foto .foto-inicial{font-size:56px}
+.abogado-nombre{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.1}
+.abogado-cargo{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.abogado-bio{font-size:13px;line-height:1.75;color:#666;font-weight:300}
+
+/* VALORES EQUIPO */
+.valores-band{background:var(--navy-dark);padding:64px 5%;color:white}
+.valores-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.07)}
+.valor-box{padding:36px 28px;border-right:1px solid rgba(255,255,255,.07)}
+.valor-box:last-child{border-right:none}
+.valor-icon{width:36px;height:36px;background:rgba(192,154,56,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:16px}
+.valor-box h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:white;margin-bottom:8px}
+.valor-box p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.65}
+
+/* ═══════════════ CONTACTO ═══════════════ */
+.contacto-section{padding:80px 5%;background:var(--off-white)}
+.contacto-consulta{
+  background:var(--navy);border-radius:4px;
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;margin-bottom:56px;
+}
+.consulta-info{padding:56px 48px;color:white}
+.consulta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:600;color:white;margin-bottom:12px;line-height:1.15}
+.consulta-title em{font-style:italic;color:var(--gold-light)}
+.consulta-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:32px;font-weight:300}
+.consulta-datos{display:flex;flex-direction:column;gap:20px}
+.consulta-dato{display:flex;gap:14px;align-items:flex-start}
+.dato-icon{width:38px;height:38px;flex-shrink:0;border:1px solid rgba(192,154,56,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.consulta-dato h5{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.consulta-dato a,.consulta-dato p{font-size:13px;color:rgba(255,255,255,.75);text-decoration:none}
+.consulta-dato a:hover{color:var(--gold)}
+.wa-link{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:white;padding:12px 20px;border-radius:2px;
+  font-size:12px;font-weight:500;text-decoration:none;margin-top:6px;
+  transition:background .2s;
+}
+.wa-link:hover{background:#1ebe5a}
+
+.consulta-form{background:white;padding:48px 40px}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:28px}
+.form-grid{display:flex;flex-direction:column;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
+.form-group input,.form-group select,.form-group textarea{
+  border:1px solid var(--gray-light);border-radius:2px;
+  padding:12px 14px;font-family:'Jost',sans-serif;font-size:13px;
+  color:var(--text);outline:none;background:white;
+  transition:border-color .2s;-webkit-appearance:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:100px}
+.btn-submit{
+  background:var(--navy);color:white;border:none;
+  padding:15px 32px;border-radius:2px;
+  font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;font-weight:500;
+}
+.btn-submit:hover{background:var(--gold)}
+
+/* MAPA / COBERTURA */
+.cobertura-band{background:var(--navy-dark);padding:64px 5%;color:white;text-align:center}
+.cobertura-band h3{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,38px);font-weight:600;color:white;margin-bottom:12px}
+.cobertura-band h3 em{font-style:italic;color:var(--gold-light)}
+.cobertura-band p{font-size:14px;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 36px;line-height:1.7}
+.cobertura-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.cob-tag{font-size:11px;letter-spacing:1px;border:1px solid rgba(192,154,56,.3);color:rgba(255,255,255,.65);padding:7px 18px;border-radius:20px}
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer{background:#07101A;padding:44px 5% 28px;color:rgba(255,255,255,.35)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:24px}
+.footer-brand .name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;letter-spacing:2px;color:white}
+.footer-brand .sub{font-size:8px;letter-spacing:4px;color:var(--gold);display:block;margin-top:2px}
+.footer-nav{display:flex;gap:24px;list-style:none}
+.footer-nav a{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.footer-nav a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;font-size:11px}
+
+/* WA FLOAT */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:300;
+  width:54px;height:54px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);
+  animation:waPulse 2.5s infinite;transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,.65)}}
+
+/* FADE UP */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .mision-band,.comparendos-band,.asesoria-grid,.contacto-consulta{grid-template-columns:1fr}
+  .equipo-fundador{grid-template-columns:1fr}
+  .fundador-foto{max-width:260px;margin:0 auto}
+  .abogados-grid{grid-template-columns:1fr}
+  .abogado-card{grid-template-columns:140px 1fr}
+  .paquetes-grid{grid-template-columns:1fr}
+  .porque-grid,.valores-inner{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .estrella-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <div class="nav-logo" onclick="showPage('inicio')">
+    <svg viewBox="0 0 120 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Col izq azul -->
+      <rect x="6" y="13" width="30" height="5" rx="0.5" fill="#1B3A5C"/>
+      <rect x="9" y="18" width="24" height="3" rx="0.5" fill="#1B3A5C"/>
+      <rect x="11" y="21" width="20" height="32" fill="#1B3A5C"/>
+      <line x1="15" y1="21" x2="15" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <line x1="19" y1="21" x2="19" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <line x1="23" y1="21" x2="23" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <line x1="27" y1="21" x2="27" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <rect x="9" y="53" width="24" height="3" rx="0.5" fill="#1B3A5C"/>
+      <rect x="6" y="56" width="30" height="5" rx="0.5" fill="#1B3A5C"/>
+      <!-- Col central dorada -->
+      <rect x="45" y="7" width="30" height="6" rx="0.5" fill="#A8822A"/>
+      <rect x="48" y="13" width="24" height="4" rx="0.5" fill="#C09A38"/>
+      <rect x="51" y="17" width="18" height="40" fill="#C09A38"/>
+      <line x1="55" y1="17" x2="55" y2="57" stroke="#96771F" stroke-width="0.9"/>
+      <line x1="59" y1="17" x2="59" y2="57" stroke="#96771F" stroke-width="0.9"/>
+      <line x1="63" y1="17" x2="63" y2="57" stroke="#96771F" stroke-width="0.9"/>
+      <rect x="48" y="57" width="24" height="3" rx="0.5" fill="#C09A38"/>
+      <rect x="45" y="60" width="30" height="5" rx="0.5" fill="#A8822A"/>
+      <!-- Col der azul -->
+      <rect x="84" y="13" width="30" height="5" rx="0.5" fill="#1B3A5C"/>
+      <rect x="87" y="18" width="24" height="3" rx="0.5" fill="#1B3A5C"/>
+      <rect x="89" y="21" width="20" height="32" fill="#1B3A5C"/>
+      <line x1="93" y1="21" x2="93" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <line x1="97" y1="21" x2="97" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <line x1="101" y1="21" x2="101" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <line x1="105" y1="21" x2="105" y2="53" stroke="#0D2236" stroke-width="0.9"/>
+      <rect x="87" y="53" width="24" height="3" rx="0.5" fill="#1B3A5C"/>
+      <rect x="84" y="56" width="30" height="5" rx="0.5" fill="#1B3A5C"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="name">ONZAGA</span>
+      <span class="sub">Abogados &amp; Asociados</span>
+    </div>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showPage('inicio')" data-page="inicio" class="active">Inicio</a></li>
+    <li><a href="#" onclick="showPage('servicios')" data-page="servicios">Servicios</a></li>
+    <li><a href="#" onclick="showPage('equipo')" data-page="equipo">Equipo</a></li>
+    <li><a href="#" onclick="showPage('contacto')" data-page="contacto" class="nav-cta">Consulta gratis</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA: INICIO
+═══════════════════════════════════════ -->
+<div class="page active" id="page-inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-main">
+      <div class="hero-deco-cols">
+        <div class="hero-deco-col" style="height:260px"></div>
+        <div class="hero-deco-col" style="height:320px"></div>
+        <div class="hero-deco-col" style="height:200px"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Firma de abogados · Colombia</div>
+        <h1 class="hero-h1">Por qué elegir<br><em>Onzaga Abogados</em></h1>
+        <p class="hero-tagline">Protegemos tus proyectos.</p>
+        <p class="hero-desc">Somos una firma comprometida con la defensa activa de los derechos de las personas. Combinamos rigor jurídico con un trato cercano, transparente y humano para cada uno de nuestros clientes.</p>
+        <div class="hero-btns">
+          <button class="btn-gold" onclick="showPage('contacto')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Consulta gratuita
+          </button>
+          <button class="btn-ghost" onclick="showPage('servicios')">
+            Ver servicios
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Áreas de práctica</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Compromiso con el cliente</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">+50</div>
+        <div class="stat-label">Casos gestionados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Tiempo de respuesta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISIÓN -->
+  <section class="mision-band">
+    <div class="fade-up">
+      <div class="mision-label">Nuestra misión</div>
+      <h2 class="mision-title">Defender lo que más <em>importa</em></h2>
+      <p class="mision-text">En Onzaga Abogados y Asociados creemos que toda persona merece acceso a una defensa jurídica de calidad. Nuestra misión es acompañar a cada cliente con conocimiento, dedicación y transparencia, construyendo soluciones reales para problemas reales. No manejamos expedientes, manejamos vidas y proyectos.</p>
+    </div>
+    <div class="fade-up">
+      <div class="mision-label">Nuestro compromiso</div>
+      <div class="compromiso-grid">
+        <div class="compromiso-card">
+          <h4>Transparencia total</h4>
+          <p>Le explicamos cada paso del proceso en lenguaje claro, sin tecnicismos innecesarios.</p>
+        </div>
+        <div class="compromiso-card">
+          <h4>Defensa activa</h4>
+          <p>No esperamos, actuamos. Su caso siempre está en movimiento con nosotros.</p>
+        </div>
+        <div class="compromiso-card">
+          <h4>Respuesta rápida</h4>
+          <p>Respondemos en menos de 24 horas. Estamos disponibles cuando más nos necesita.</p>
+        </div>
+        <div class="compromiso-card">
+          <h4>Resultados reales</h4>
+          <p>Cada estrategia está diseñada para obtener el mejor resultado posible para usted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="porque-band">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label centered" style="justify-content:center;color:var(--gold-light)">Nuestras ventajas</div>
+      <h2 class="porque-title">¿Por qué <em>Onzaga</em> es la elección correcta?</h2>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-item fade-up">
+        <div class="porque-num">01</div>
+        <h3>Especialistas en Siniestros</h3>
+        <p>Somos referentes en responsabilidad civil extracontractual por accidentes de vehículos. Conocemos cada detalle del proceso para maximizar su reclamación.</p>
+      </div>
+      <div class="porque-item fade-up">
+        <div class="porque-num">02</div>
+        <h3>Trato Humano y Cercano</h3>
+        <p>Entendemos que detrás de cada caso hay una persona. Escuchamos, orientamos y acompañamos con empatía en cada etapa del proceso.</p>
+      </div>
+      <div class="porque-item fade-up">
+        <div class="porque-num">03</div>
+        <h3>Primera Consulta Gratuita</h3>
+        <p>Antes de comprometerse, conózcanos. Le evaluamos el caso sin costo y con total honestidad sobre sus opciones reales.</p>
+      </div>
+      <div class="porque-item fade-up">
+        <div class="porque-num">04</div>
+        <h3>Cobertura Nacional</h3>
+        <p>Atendemos clientes en todo Colombia, de forma presencial o virtual, adaptándonos a sus posibilidades y necesidades.</p>
+      </div>
+      <div class="porque-item fade-up">
+        <div class="porque-num">05</div>
+        <h3>Estrategia Personalizada</h3>
+        <p>No existen casos idénticos. Diseñamos una estrategia jurídica a la medida de su situación específica, sin soluciones genéricas.</p>
+      </div>
+      <div class="porque-item fade-up">
+        <div class="porque-num">06</div>
+        <h3>Rigor Jurídico</h3>
+        <p>Cada decisión está respaldada por un análisis profundo de la ley y la jurisprudencia colombiana más actualizada.</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-inicio -->
+
+
+<!-- ═══════════════════════════════════════
+     PÁGINA: SERVICIOS
+═══════════════════════════════════════ -->
+<div class="page" id="page-servicios">
+
+  <div class="page-header">
+    <div class="page-header-label">Lo que hacemos</div>
+    <h1 class="page-header-title">Nuestros <em>Servicios</em></h1>
+    <p class="page-header-desc">Ofrecemos representación jurídica integral en las áreas que más impactan la vida de las personas. Desde siniestros viales hasta procesos constitucionales.</p>
+  </div>
+
+  <!-- SERVICIO ESTRELLA: RESPONSABILIDAD CIVIL -->
+  <section class="servicio-estrella">
+    <div class="estrella-badge">⭐ Servicio principal</div>
+    <div class="estrella-grid">
+      <div>
+        <h2 class="estrella-title">Responsabilidad Civil Extracontractual en <em>Siniestros de Vehículos</em></h2>
+        <p class="estrella-desc">Este es nuestro fuerte. Si usted o un familiar sufrió un accidente de tránsito, tiene derecho a una indemnización completa. En Onzaga lo acompañamos desde el primer día: reclamamos ante aseguradoras, gestionamos la liberación del vehículo y lo representamos judicialmente si es necesario.</p>
+        <p class="estrella-desc">Conocemos cada detalle del proceso para que usted reciba lo que le corresponde, sin que las aseguradoras aprovechen su desconocimiento legal.</p>
+        <button class="btn-gold" onclick="showPage('contacto')">Evaluar mi caso — Gratis</button>
+      </div>
+      <div class="estrella-items">
+        <div class="estrella-item fade-up">
+          <div class="estrella-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <h4>Liberación de vehículos</h4>
+            <p>Gestionamos la recuperación de su vehículo retenido tras un siniestro, ante autoridades y aseguradoras.</p>
+          </div>
+        </div>
+        <div class="estrella-item fade-up">
+          <div class="estrella-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h4>Reclamaciones ante aseguradoras</h4>
+            <p>Presentamos, sustentamos y hacemos seguimiento a sus reclamaciones para garantizar el pago justo e íntegro.</p>
+          </div>
+        </div>
+        <div class="estrella-item fade-up">
+          <div class="estrella-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <h4>Representación judicial</h4>
+            <p>Si la aseguradora niega o minimiza su reclamación, la llevamos ante los jueces para obtener una indemnización justa.</p>
+          </div>
+        </div>
+        <div class="estrella-item fade-up">
+          <div class="estrella-item-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <div>
+            <h4>Atención a víctimas de accidentes</h4>
+            <p>Asesoramos a lesionados y familias de fallecidos para reclamar daños materiales, perjuicios morales y lucro cesante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPUGNACIÓN DE COMPARENDOS -->
+  <section class="comparendos-band">
+    <div class="fade-up">
+      <div class="estrella-badge" style="background:var(--navy)">Segundo servicio estrella</div>
+      <h2 class="estrella-title">Impugnación de <em>Comparendos</em></h2>
+      <p class="estrella-desc">¿Recibió un comparendo que considera injusto o erróneo? No lo pague sin antes consultarnos. En Onzaga analizamos su caso y, si es jurídicamente procedente, lo impugnamos ante las autoridades correspondientes.</p>
+      <p class="estrella-desc" style="font-size:13px;color:#888;font-style:italic;">Nota: Todo proceso de impugnación requiere un estudio previo para determinar la viabilidad jurídica. Le informaremos con honestidad si su caso es procedente antes de iniciar cualquier trámite.</p>
+      <button class="btn-gold" onclick="showPage('contacto')">Estudiar mi comparendo</button>
+    </div>
+    <div class="fade-up">
+      <h4 style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--navy);margin-bottom:20px;font-weight:600">Proceso de impugnación</h4>
+      <div class="proceso-steps">
+        <div class="proceso-step">
+          <div class="paso-num">1</div>
+          <div>
+            <h4>Estudio del caso</h4>
+            <p>Analizamos el comparendo, las circunstancias y la normativa aplicable para determinar si la impugnación es procedente.</p>
+          </div>
+        </div>
+        <div class="proceso-step">
+          <div class="paso-num">2</div>
+          <div>
+            <h4>Concepto jurídico</h4>
+            <p>Le informamos con claridad las posibilidades reales de éxito y los pasos a seguir antes de comprometerse.</p>
+          </div>
+        </div>
+        <div class="proceso-step">
+          <div class="paso-num">3</div>
+          <div>
+            <h4>Presentación del recurso</h4>
+            <p>Elaboramos y presentamos el recurso de impugnación con todos los argumentos jurídicos sustentados.</p>
+          </div>
+        </div>
+        <div class="proceso-step">
+          <div class="paso-num">4</div>
+          <div>
+            <h4>Seguimiento</h4>
+            <p>Hacemos seguimiento hasta la resolución definitiva y le mantenemos informado en todo momento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section class="paquetes-band">
+    <div class="section-centered">
+      <div class="section-label centered">Planes y paquetes</div>
+      <h2 class="section-title">Servicios con <em>paquetes definidos</em></h2>
+      <p class="section-desc" style="margin:12px auto 0">Diseñamos paquetes claros para que conozca desde el inicio exactamente qué incluye su proceso y cuál es su inversión jurídica.</p>
+    </div>
+    <div class="paquetes-grid">
+      <div class="paquete-card fade-up">
+        <div class="paquete-header">
+          <div class="paquete-tag">Paquete básico</div>
+          <div class="paquete-name">Orientación Legal</div>
+          <div class="paquete-price">Sesión de asesoría puntual</div>
+        </div>
+        <div class="paquete-body">
+          <ul class="paquete-features">
+            <li>Consulta inicial de hasta 60 minutos</li>
+            <li>Análisis de su situación jurídica</li>
+            <li>Orientación sobre opciones disponibles</li>
+            <li>Concepto escrito básico de su caso</li>
+            <li>Recomendaciones de pasos a seguir</li>
+          </ul>
+          <button class="btn-paquete" onclick="showPage('contacto')">Solicitar este paquete</button>
+        </div>
+      </div>
+      <div class="paquete-card featured fade-up">
+        <div class="featured-badge">Más solicitado</div>
+        <div class="paquete-header">
+          <div class="paquete-tag">Paquete integral</div>
+          <div class="paquete-name">Acompañamiento Total</div>
+          <div class="paquete-price">Proceso completo con representación</div>
+        </div>
+        <div class="paquete-body">
+          <ul class="paquete-features">
+            <li>Consulta inicial gratuita</li>
+            <li>Análisis jurídico profundo del caso</li>
+            <li>Diseño de estrategia personalizada</li>
+            <li>Representación judicial completa</li>
+            <li>Elaboración de todos los escritos</li>
+            <li>Seguimiento continuo del proceso</li>
+            <li>Comunicación directa con el abogado</li>
+          </ul>
+          <button class="btn-paquete" onclick="showPage('contacto')">Solicitar este paquete</button>
+        </div>
+      </div>
+      <div class="paquete-card fade-up">
+        <div class="paquete-header">
+          <div class="paquete-tag">Paquete empresarial</div>
+          <div class="paquete-name">Consultoría Continua</div>
+          <div class="paquete-price">Asesoría jurídica mensual</div>
+        </div>
+        <div class="paquete-body">
+          <ul class="paquete-features">
+            <li>Asesoría jurídica mensual ilimitada</li>
+            <li>Revisión de contratos y documentos</li>
+            <li>Conceptos jurídicos especializados</li>
+            <li>Prevención de riesgos legales</li>
+            <li>Atención prioritaria en urgencias</li>
+            <li>Ideal para empresas y emprendedores</li>
+          </ul>
+          <button class="btn-paquete" onclick="showPage('contacto')">Solicitar este paquete</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASESORÍA Y CONSULTORÍA -->
+  <section class="asesoria-band">
+    <div style="margin-bottom:48px">
+      <div class="section-label">Servicios especializados</div>
+      <h2 class="section-title">Asesoría y <em>Consultoría Jurídica</em></h2>
+    </div>
+    <div class="asesoria-grid">
+      <!-- ASESORÍA -->
+      <div class="asesoria-card fade-up">
+        <div class="asesoria-card-header">
+          <div class="asesoria-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="asesoria-card-title">Asesoría Jurídica</div>
+          <div class="asesoria-card-sub">Orientación legal clara para entender su situación y tomar decisiones con seguridad</div>
+        </div>
+        <div class="asesoria-card-body">
+          <p class="asesoria-desc">Un servicio de orientación legal diseñado para ayudarle a comprender su situación, resolver dudas puntuales y conocer las opciones disponibles para su caso. Brindamos información clara, práctica y aplicable, en un lenguaje comprensible, para que pueda actuar con conocimiento y tranquilidad.</p>
+          <div class="asesoria-dirigido">
+            <h4>¿A quién va dirigido?</h4>
+            <ul class="asesoria-list">
+              <li>Personas que enfrentan un problema legal específico</li>
+              <li>Quienes necesitan claridad antes de iniciar un proceso</li>
+              <li>Personas que desean conocer sus derechos y obligaciones</li>
+              <li>Quienes buscan orientación sin comprometerse a un proceso judicial</li>
+              <li>Personas que necesitan una segunda opinión profesional</li>
+            </ul>
+          </div>
+          <div class="asesoria-dirigido">
+            <h4>¿Cuándo es necesaria?</h4>
+            <ul class="asesoria-list">
+              <li>Cuando tiene un problema legal y no sabe por dónde empezar</li>
+              <li>Antes de firmar un contrato o documento importante</li>
+              <li>Cuando necesita entender las consecuencias de una decisión</li>
+              <li>Para prevenir errores legales antes de actuar</li>
+            </ul>
+          </div>
+          <button class="btn-paquete" onclick="showPage('contacto')">Solicitar asesoría</button>
+        </div>
+      </div>
+      <!-- CONSULTORÍA -->
+      <div class="asesoria-card consultoria fade-up">
+        <div class="asesoria-card-header">
+          <div class="asesoria-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="asesoria-card-title">Consultoría Jurídica</div>
+          <div class="asesoria-card-sub">Análisis integral y estrategia jurídica especializada para casos complejos</div>
+        </div>
+        <div class="asesoria-card-body">
+          <p class="asesoria-desc">Un servicio de apoyo profesional especializado, enfocado en analizar cada caso de manera integral y ofrecer asesoría estratégica con productos jurídicos específicos. No se trata solo de resolver dudas, sino de diseñar soluciones jurídicas concretas que permitan tomar decisiones informadas y sostenibles.</p>
+          <div class="asesoria-dirigido">
+            <h4>¿A quién va dirigido?</h4>
+            <ul class="asesoria-list">
+              <li>Personas que requieren un análisis jurídico profundo</li>
+              <li>Empresas, emprendedores y organizaciones</li>
+              <li>Clientes con casos complejos o de alto impacto</li>
+              <li>Quienes necesitan documentos o estrategias jurídicas específicas</li>
+              <li>Personas que buscan acompañamiento profesional continuo</li>
+            </ul>
+          </div>
+          <div class="asesoria-dirigido">
+            <h4>¿Qué incluye?</h4>
+            <ul class="asesoria-list">
+              <li>Análisis jurídico profundo e integral del caso</li>
+              <li>Elaboración de conceptos, memoriales y estrategias</li>
+              <li>Acompañamiento en la toma de decisiones clave</li>
+              <li>Productos jurídicos a medida (contratos, conceptos, derechos de petición)</li>
+            </ul>
+          </div>
+          <button class="btn-paquete" onclick="showPage('contacto')">Solicitar consultoría</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTROS SERVICIOS -->
+  <section class="otros-band">
+    <div>
+      <div class="section-label">También atendemos</div>
+      <h2 class="section-title">Otras áreas de <em>práctica</em></h2>
+    </div>
+    <div class="otros-grid">
+      <div class="otro-card fade-up">
+        <div class="otro-num">01</div>
+        <h3 class="otro-title">Derecho Penal</h3>
+        <p class="otro-desc">Defensa técnica en procesos penales, representación en audiencias y asesoría a víctimas e imputados.</p>
+      </div>
+      <div class="otro-card fade-up">
+        <div class="otro-num">02</div>
+        <h3 class="otro-title">Derecho Civil</h3>
+        <p class="otro-desc">Contratos, responsabilidad civil, sucesiones, procesos ejecutivos y declarativos entre particulares.</p>
+      </div>
+      <div class="otro-card fade-up">
+        <div class="otro-num">03</div>
+        <h3 class="otro-title">Derecho de Familia</h3>
+        <p class="otro-desc">Divorcios, custodia, alimentos, adopciones y violencia intrafamiliar. Acompañamiento en momentos delicados.</p>
+      </div>
+      <div class="otro-card fade-up">
+        <div class="otro-num">04</div>
+        <h3 class="otro-title">Derecho Laboral</h3>
+        <p class="otro-desc">Defensa de derechos laborales, despidos injustos, liquidaciones y procesos ante el Ministerio del Trabajo.</p>
+      </div>
+      <div class="otro-card fade-up">
+        <div class="otro-num">05</div>
+        <h3 class="otro-title">Derecho Administrativo</h3>
+        <p class="otro-desc">Representación ante entidades del Estado, nulidades, recursos gubernativos y responsabilidad estatal.</p>
+      </div>
+      <div class="otro-card fade-up">
+        <div class="otro-num">06</div>
+        <h3 class="otro-title">Tutelas y Acciones Constitucionales</h3>
+        <p class="otro-desc">Protección inmediata de derechos fundamentales ante cualquier entidad pública o privada.</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-servicios -->
+
+
+<!-- ═══════════════════════════════════════
+     PÁGINA: EQUIPO
+═══════════════════════════════════════ -->
+<div class="page" id="page-equipo">
+
+  <div class="page-header">
+    <div class="page-header-label">Las personas detrás de la firma</div>
+    <h1 class="page-header-title">Nuestro <em>Equipo</em></h1>
+    <p class="page-header-desc">Abogados con vocación de servicio, formación rigurosa y un compromiso genuino con cada cliente que nos confía su caso.</p>
+  </div>
+
+  <section class="equipo-section">
+
+    <!-- FUNDADOR -->
+    <div class="equipo-fundador fade-up">
+      <div class="fundador-foto">
+        <div class="foto-inicial">M</div>
+        <div class="foto-gold-line"></div>
+        <div class="foto-name-hint">Foto próximamente</div>
+      </div>
+      <div>
+        <div class="fundador-badge">Fundador</div>
+        <h2 class="fundador-nombre">Miguel Leonardo<br>Onzaga Franco</h2>
+        <div class="fundador-cargo">Abogado Fundador · Onzaga Abogados y Asociados</div>
+        <p class="fundador-bio">Miguel Leonardo Onzaga Franco es el fundador de Onzaga Abogados y Asociados, firma que nació de su convicción de que toda persona merece una defensa jurídica de calidad. Con experiencia en litigio civil, responsabilidad extracontractual y derecho administrativo, lidera la firma con rigor técnico y un profundo compromiso humano.</p>
+        <p class="fundador-bio">Su enfoque combina estrategia jurídica sólida con un trato cercano y transparente, asegurando que cada cliente entienda su situación y confíe en el proceso que lo acompaña.</p>
+        <div class="fundador-especialidades">
+          <span class="esp-tag">Responsabilidad Civil</span>
+          <span class="esp-tag">Siniestros Viales</span>
+          <span class="esp-tag">Derecho Administrativo</span>
+          <span class="esp-tag">Tutelas</span>
+          <span class="esp-tag">Impugnación de Comparendos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOGADOS -->
+    <div style="margin-bottom:40px">
+      <div class="section-label">El equipo</div>
+      <h2 class="section-title">Abogados <em>asociados</em></h2>
+    </div>
+    <div class="abogados-grid">
+      <div class="abogado-card fade-up">
+        <div class="abogado-foto">
+          <div class="foto-inicial" style="font-size:56px">D</div>
+          <div class="foto-gold-line"></div>
+          <div class="foto-name-hint" style="font-size:8px">Foto próximamente</div>
+        </div>
+        <div>
+          <div class="abogado-nombre">Diego Andrés<br>Leyton Rodríguez</div>
+          <div class="abogado-cargo">Abogado Asociado</div>
+          <p class="abogado-bio">Especialista en derecho penal y procesal. Diego aporta una defensa técnica rigurosa en cada caso, con especial enfoque en la representación ante jueces y tribunales. Su experiencia en litigio activo garantiza una defensa sólida en todas las instancias.</p>
+          <div class="fundador-especialidades" style="margin-top:14px">
+            <span class="esp-tag">Derecho Penal</span>
+            <span class="esp-tag">Litigio</span>
+            <span class="esp-tag">Derecho Civil</span>
+          </div>
+        </div>
+      </div>
+      <div class="abogado-card fade-up">
+        <div class="abogado-foto">
+          <div class="foto-inicial" style="font-size:56px">M</div>
+          <div class="foto-gold-line"></div>
+          <div class="foto-name-hint" style="font-size:8px">Foto próximamente</div>
+        </div>
+        <div>
+          <div class="abogado-nombre">Marcela<br>Beltrán</div>
+          <div class="abogado-cargo">Abogada Asociada</div>
+          <p class="abogado-bio">Enfocada en derecho de familia y laboral, Marcela combina profundo conocimiento jurídico con una sensibilidad especial para acompañar a los clientes en los momentos más difíciles. Su trato humano y empático marca la diferencia en procesos emocionalmente exigentes.</p>
+          <div class="fundador-especialidades" style="margin-top:14px">
+            <span class="esp-tag">Derecho de Familia</span>
+            <span class="esp-tag">Derecho Laboral</span>
+            <span class="esp-tag">Conciliación</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores-band">
+    <div class="valores-inner">
+      <div class="valor-box fade-up">
+        <div class="valor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Integridad</h4>
+        <p>Actuamos siempre con honestidad y ética, incluso cuando la respuesta no es la que el cliente quiere escuchar.</p>
+      </div>
+      <div class="valor-box fade-up">
+        <div class="valor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Compromiso</h4>
+        <p>Cada caso recibe toda nuestra atención y dedicación. Su problema es nuestro problema.</p>
+      </div>
+      <div class="valor-box fade-up">
+        <div class="valor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Trabajo en equipo</h4>
+        <p>Cada caso se aborda con la mirada colectiva del equipo, sumando perspectivas para la mejor solución.</p>
+      </div>
+      <div class="valor-box fade-up">
+        <div class="valor-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>Resultados</h4>
+        <p>No medimos el éxito en tiempo facturado, sino en los resultados reales que obtenemos para usted.</p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-equipo -->
+
+
+<!-- ═══════════════════════════════════════
+     PÁGINA: CONTACTO
+═══════════════════════════════════════ -->
+<div class="page" id="page-contacto">
+
+  <div class="page-header">
+    <div class="page-header-label">Estamos aquí para usted</div>
+    <h1 class="page-header-title">Agendar <em>Consulta Gratuita</em></h1>
+    <p class="page-header-desc">La primera consulta es completamente gratuita y sin compromiso. Cuéntenos su situación y le orientamos con honestidad sobre sus opciones reales.</p>
+  </div>
+
+  <section class="contacto-section">
+    <div class="contacto-consulta">
+      <div class="consulta-info">
+        <h2 class="consulta-title">Hablemos de <em>su caso</em></h2>
+        <p class="consulta-desc">No importa cuán compleja parezca su situación. Estamos listos para escucharle, evaluar su caso y orientarle con claridad. La primera consulta siempre es gratuita.</p>
+        <div class="consulta-datos">
+          <div class="consulta-dato">
+            <div class="dato-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h5>WhatsApp</h5>
+              <p>+57 300 000 0000 (número de ejemplo)</p>
+              <a href="https://wa.me/573000000000" class="wa-link" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
+          <div class="consulta-dato">
+            <div class="dato-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h5>Correo electrónico</h5>
+              <a href="mailto:onzaga.asociados@gmail.com">onzaga.asociados@gmail.com</a>
+            </div>
+          </div>
+          <div class="consulta-dato">
+            <div class="dato-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <h5>Instagram</h5>
+              <p>@onzaga.asociados <span style="font-size:11px;opacity:.5">(próximamente)</span></p>
+            </div>
+          </div>
+          <div class="consulta-dato">
+            <div class="dato-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h5>Cobertura</h5>
+              <p>Colombia · Presencial y virtual en todo el país</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="consulta-form">
+        <div class="form-title">Agendar consulta gratuita</div>
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre completo</label>
+              <input type="text" placeholder="Su nombre"/>
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp</label>
+              <input type="tel" placeholder="+57 300 000 0000"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="su@correo.com"/>
+          </div>
+          <div class="form-group">
+            <label>Tipo de caso</label>
+            <select>
+              <option value="">Seleccione el área</option>
+              <option>Siniestro de vehículo / Responsabilidad Civil</option>
+              <option>Reclamación ante aseguradora</option>
+              <option>Liberación de vehículo</option>
+              <option>Impugnación de comparendo</option>
+              <option>Asesoría jurídica</option>
+              <option>Consultoría jurídica</option>
+              <option>Derecho Penal</option>
+              <option>Derecho de Familia</option>
+              <option>Derecho Laboral</option>
+              <option>Derecho Civil</option>
+              <option>Derecho Administrativo</option>
+              <option>Tutela / Acción Constitucional</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Modalidad de atención</label>
+            <select>
+              <option>Virtual (videollamada)</option>
+              <option>Presencial</option>
+              <option>Me da igual</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cuéntenos su caso</label>
+            <textarea placeholder="Describa brevemente su situación. Toda la información es estrictamente confidencial."></textarea>
+          </div>
+          <button class="btn-submit" onclick="alert('Gracias por contactar a Onzaga Abogados y Asociados. En breve un miembro de nuestro equipo se comunicará con usted. Primera consulta totalmente gratuita.')">Enviar solicitud de consulta →</button>
+          <p style="font-size:11px;color:#aaa;margin-top:4px">Su información es confidencial. Sin costo ni compromiso.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COBERTURA -->
+    <div class="cobertura-band" style="border-radius:4px">
+      <h3>Cobertura en todo <em>Colombia</em></h3>
+      <p>Atendemos clientes de manera presencial y virtual en cualquier ciudad del país. La distancia no es una barrera para defender sus derechos.</p>
+      <div class="cobertura-tags">
+        <span class="cob-tag">Bogotá</span>
+        <span class="cob-tag">Medellín</span>
+        <span class="cob-tag">Cali</span>
+        <span class="cob-tag">Barranquilla</span>
+        <span class="cob-tag">Bucaramanga</span>
+        <span class="cob-tag">Cartagena</span>
+        <span class="cob-tag">Pereira</span>
+        <span class="cob-tag">Manizales</span>
+        <span class="cob-tag">Todo el país · Virtual</span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-contacto -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="name">ONZAGA</span>
+      <span class="sub">Abogados &amp; Asociados · Colombia</span>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#" onclick="showPage('inicio')">Inicio</a></li>
+      <li><a href="#" onclick="showPage('servicios')">Servicios</a></li>
+      <li><a href="#" onclick="showPage('equipo')">Equipo</a></li>
+      <li><a href="#" onclick="showPage('contacto')">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Onzaga Abogados y Asociados. Todos los derechos reservados.</span>
+    <span>onzaga.asociados@gmail.com</span>
+  </div>
+</footer>
+
+<!-- WA flotante -->
+<a href="https://wa.me/573000000000" target="_blank" class="wa-float" title="Escribir por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  const activeLink = document.querySelector('.nav-links a[data-page="' + pageId + '"]');
+  if(activeLink) activeLink.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initFadeUps, 100);
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+function initFadeUps() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if(e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.page.active .fade-up:not(.visible)').forEach(el => observer.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', initFadeUps);
+</script>
+</body>
+</html>
